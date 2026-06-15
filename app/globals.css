@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-heading-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --color-endex-firefly: #050e15;
+  --color-endex-charcoal: #02181a;
+  --color-endex-puerto: #3fc79e;
+  --color-endex-grid: #e5e7eb;
+  --color-pg-primary: #2563eb;
+  --color-pg-primary-hover: #3b82f6;
+  --color-pg-neon: #bfff2e;
+
+  --animate-pg-marquee: pg-marquee 36s linear infinite;
+  --animate-metrics-in: metrics-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pg-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes metrics-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply m-0 bg-white font-sans text-endex-firefly antialiased; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none !important; }
+    .animate-metrics-in { animation: none !important; }
+  }
+
+  main { @apply min-h-svh w-full max-w-none; }
+}
+
+@layer utilities {
+  .story-strike {
+    position: relative;
+  }
+  .story-strike::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 3px;
+    width: var(--strike-w, 0%);
+    background-color: #ef4444;
+    border-radius: 2px;
+    transform: translateY(-50%);
+    transition: width 0.1s linear;
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  .pg-bleed-x {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  .pg-tri-tl { clip-path: polygon(0 0, 100% 0, 0 100%); }
+  .pg-tri-bl { clip-path: polygon(0 0, 0 100%, 100% 100%); }
+
+  @keyframes demo-chat-shimmer {
+    0%, 100% { opacity: 0.42; }
+    50% { opacity: 0.95; }
+  }
+  .demo-chat-shimmer { animation: demo-chat-shimmer 2.2s ease-in-out infinite; }
+}
