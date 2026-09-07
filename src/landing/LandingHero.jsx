@@ -5,20 +5,17 @@ import { landingPageColumn, landingPageGutter } from './landingLayout'
 
 const HERO_IMAGE = '/herobannerimage.png'
 const PAYGLOCAL_LOGO = '/whitlogopg.png'
-const ICON_CHATGPT = '/icon-chatgpt.svg'
-const ICON_CLAUDE = '/icon-claude.svg'
-const ICON_GEMINI = '/icon-gemini.svg'
 const MASTERCARD_LOGO = '/mastercard.v2.svg'
 const AXIS_BANK_LOGO = '/AXISBank_Logo.svg'
 
 const MARQUEE_ITEMS = [
-  { type: 'text', value: 'Your store — AI ready' },
+  { type: 'text', value: 'Built for agentic commerce' },
   { type: 'separator' },
-  { type: 'ai-logos' },
+  { type: 'text', value: 'Conversational checkout, zero redirects' },
   { type: 'separator' },
-  { type: 'text', value: 'Your store — AI ready' },
+  { type: 'text', value: 'AI-native payments, human-grade trust' },
   { type: 'separator' },
-  { type: 'ai-logos' },
+  { type: 'text', value: 'Discover, decide, and pay in one thread' },
   { type: 'separator' },
 ]
 
@@ -30,9 +27,9 @@ const NAV_LINKS = [
 ]
 
 const STATS = [
-  { label: 'Higher conversion', value: '2x_' },
-  { label: 'More time on site', value: '3x_' },
-  { label: 'Reduction in return rate', value: '20%_' },
+  { label: 'More conversions with AI chat', value: '4×_' },
+  { label: 'Faster purchase completion', value: '47%_' },
+  { label: 'More products discovered', value: '3×_' },
 ]
 
 function HeroBackdrop() {
@@ -111,9 +108,9 @@ export function LandingHero() {
 
             <div className="relative flex min-h-0 flex-col justify-center overflow-y-auto px-4 py-4 sm:px-6 sm:py-5 lg:px-8 lg:py-6">
               <div className="relative max-w-[540px]">
-                <p className="inline-flex items-center gap-2 rounded border border-white/[0.14] bg-white/[0.03] px-2 py-0.5 font-mono text-[9px] font-medium uppercase tracking-[0.16em] text-zinc-400 sm:text-[10px]">
+                <p className="badge-shimmer inline-flex items-center gap-2 rounded border border-white/[0.14] bg-white/[0.03] px-2 py-0.5 font-mono text-[9px] font-medium uppercase tracking-[0.16em] text-zinc-400 sm:text-[10px]">
                   <span className="text-blue-400">●</span>
-                  Now live · MCP-powered commerce
+                  Launching at GFF 2026
                 </p>
                 <h1 className="mt-3 w-full max-w-[760px] font-serif text-[clamp(1.45rem,4.8vw,3.35rem)] font-normal leading-[1.05] tracking-tight text-white sm:mt-4 sm:text-[clamp(1.85rem,4.6vw,3.85rem)]">
                   The future of agentic commerce is here
@@ -137,16 +134,6 @@ export function LandingHero() {
                       Join waitlist
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                     </button>
-                  </div>
-                  <div className="mt-5 sm:mt-6">
-                    <p className="font-sans text-[11px] font-medium leading-snug text-zinc-500 sm:text-[12px]">
-                      Make your store available on:
-                    </p>
-                    <ul className="mt-2 flex list-none flex-wrap items-center gap-3.5 p-0 sm:gap-5" aria-label="AI assistants">
-                      <li className="shrink-0"><img src={ICON_CHATGPT} alt="ChatGPT" width={28} height={28} className="h-5 w-5 object-contain sm:h-6 sm:w-6 md:h-7 md:w-7" decoding="async" /></li>
-                      <li className="shrink-0"><img src={ICON_CLAUDE} alt="Claude" width={28} height={28} className="h-5 w-5 object-contain sm:h-6 sm:w-6 md:h-7 md:w-7" decoding="async" /></li>
-                      <li className="shrink-0"><img src={ICON_GEMINI} alt="Gemini" width={28} height={28} className="h-5 w-5 object-contain sm:h-6 sm:w-6 md:h-7 md:w-7" decoding="async" /></li>
-                    </ul>
                   </div>
                 </form>
               </div>
@@ -189,14 +176,6 @@ export function LandingHero() {
                           )}
                           {item.type === 'text' && (
                             <span className="whitespace-nowrap font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-500 sm:text-[11px]">{item.value}</span>
-                          )}
-                          {item.type === 'ai-logos' && (
-                            <span className="flex items-center gap-2.5">
-                              <span className="whitespace-nowrap font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-500 sm:text-[11px]">Make your store available on</span>
-                              <img src={ICON_CHATGPT} alt="ChatGPT" width={16} height={16} className="h-4 w-4 object-contain opacity-60" decoding="async" />
-                              <img src={ICON_CLAUDE} alt="Claude" width={16} height={16} className="h-4 w-4 object-contain opacity-60" decoding="async" />
-                              <img src={ICON_GEMINI} alt="Gemini" width={16} height={16} className="h-4 w-4 object-contain opacity-60" decoding="async" />
-                            </span>
                           )}
                         </li>
                       ))}

@@ -2,9 +2,9 @@
 
 import { ArrowLeftRight, Fingerprint, Sparkles } from 'lucide-react'
 
-const featureCatalog = '/assets/Features/Catalog.png'
-const featurePasskey = '/assets/Features/passkey.png'
-const featurePaymentJourney = '/assets/Features/Payment in one conversation.png'
+const featureCatalog = '/assets/Features/image copy.png'
+const featurePasskey = '/assets/Features/image copy 2.png'
+const featureMcpFlows = '/assets/Features/image.png'
 
 import { FigmaMintCorner, FigmaSectionMarker } from './figmaSectionChrome'
 import { landingPageColumn, landingPageGutter } from './landingLayout'
@@ -23,15 +23,16 @@ const COLUMNS = [
     title: 'MCP-Enabled AI Commerce Flows',
     body: 'Let ChatGPT, Claude, and Gemini browse your catalogue, recommend products, and drive purchases directly in chat.',
     icon: Fingerprint,
-    image: featurePasskey,
-    imageAlt: 'Passkey and in-thread checkout',
+    image: featureMcpFlows,
+    imageAlt: 'MCP-enabled AI commerce flows',
+    imageClassName: 'max-h-[min(17rem,70vw)] sm:max-h-[min(19rem,62vw)] lg:max-h-[min(21rem,34vw)]',
   },
   {
     title: 'Passkey-Powered Payments',
     body: 'Frictionless biometric checkout with Mastercard Passkeys, fully powered by PayGlocal.',
     icon: ArrowLeftRight,
-    image: featurePaymentJourney,
-    imageAlt: 'End-to-end journey from question to payment in one conversation',
+    image: featurePasskey,
+    imageAlt: 'Passkey-powered payments',
   },
 ]
 
@@ -85,7 +86,7 @@ export function LandingDeployModes() {
                     width={800}
                     height={600}
                     sizes="(min-width: 1024px) 33vw, 100vw"
-                    className="mx-auto h-auto w-full max-h-[min(13rem,58vw)] object-contain object-center sm:max-h-[min(15rem,50vw)] lg:max-h-[min(17rem,28vw)]"
+                    className={`mx-auto h-auto w-full object-contain object-center ${col.imageClassName ?? 'max-h-[min(13rem,58vw)] sm:max-h-[min(15rem,50vw)] lg:max-h-[min(17rem,28vw)]'}`}
                     loading="lazy"
                     decoding="async"
                   />

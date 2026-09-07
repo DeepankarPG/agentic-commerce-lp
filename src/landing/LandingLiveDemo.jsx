@@ -8,15 +8,6 @@ import { TryItNowCursorFollower } from './liveDemo/TryItNowCursorFollower'
 import { useTryItNowCursor } from './liveDemo/useTryItNowCursor'
 import { landingPageColumn, landingPageGutter } from './landingLayout'
 
-// Stable object reference — never changes, so the div using it never re-renders due to style identity
-const BG_STYLE = {
-  backgroundImage: 'url(/bg-demo.webp)',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  willChange: 'auto',
-}
-
 export function LandingLiveDemo() {
   const demoFrameRef = useRef(null)
   /** Resets on full page refresh (unlike sessionStorage). */
@@ -55,7 +46,17 @@ export function LandingLiveDemo() {
       >
         <div className={`${landingPageGutter}`}>
           <div className={`relative overflow-hidden border-x border-endex-grid/90 ${landingPageColumn}`}>
-            <div className="pointer-events-none absolute inset-0" style={BG_STYLE} aria-hidden />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/bg-demo.webp"
+              alt=""
+              aria-hidden="true"
+              width={1764}
+              height={2400}
+              loading="lazy"
+              decoding="async"
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+            />
             <div className="relative z-10">
               <div className={chromeCursorClass}>
                 <FigmaMintCorner tone="white" />

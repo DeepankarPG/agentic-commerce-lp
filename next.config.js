@@ -2,9 +2,9 @@
 const nextConfig = {
   async headers() {
     return [
-      // All images, fonts, SVGs and videos in /public — cache for 1 year
+      // Root-level static assets (e.g. /bg-demo.webp, /bghero.png)
       {
-        source: '/:path*.(jpg|jpeg|png|webp|avif|gif|svg|ico|woff|woff2|ttf|otf|mp4|webm)',
+        source: '/:file((?!_next/).+\\.(?:jpg|jpeg|png|webp|avif|gif|svg|ico|woff|woff2|ttf|otf|mp4|webm))',
         headers: [
           {
             key: 'Cache-Control',
@@ -12,8 +12,7 @@ const nextConfig = {
           },
         ],
       },
-      // Next.js static chunk files already get immutable cache via _next/static,
-      // but belt-and-suspenders for any asset subfolder
+      // Nested public assets (e.g. /assets/Hotel/...)
       {
         source: '/assets/:path*',
         headers: [

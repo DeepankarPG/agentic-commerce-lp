@@ -281,6 +281,8 @@ export function ShoppingChatDemo({
                   <img
                     src={EARPHONE_PRODUCT.coverSrc}
                     alt=""
+                    width={600}
+                    height={160}
                     className="h-full w-full object-cover"
                     loading="lazy"
                     decoding="async"
@@ -344,8 +346,11 @@ export function ShoppingChatDemo({
                       <img
                         src={variantProductImage(variantId)}
                         alt=""
+                        width={144}
+                        height={144}
                         className="h-full w-full object-cover"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div className="min-w-0 flex-1 space-y-3">
@@ -458,8 +463,11 @@ export function ShoppingChatDemo({
                       <img
                         src={variantProductImage(variantId)}
                         alt=""
+                        width={56}
+                        height={56}
                         className="size-14 shrink-0 rounded-lg object-cover"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div className="min-w-0 flex-1">
                         <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">Line item</p>
@@ -543,8 +551,11 @@ export function ShoppingChatDemo({
                         <img
                           src={variantProductImage(variantId)}
                           alt=""
+                          width={56}
+                          height={56}
                           className="size-14 shrink-0 rounded-lg object-cover"
                           loading="lazy"
+                          decoding="async"
                         />
                         <div className="min-w-0">
                           <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">Checkout</p>

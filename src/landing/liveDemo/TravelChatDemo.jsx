@@ -156,7 +156,7 @@ function IconHomeCard({ className }) {
 function PackageCover({ src, title }) {
   return (
     <div className="relative h-24 w-full overflow-hidden border-b border-zinc-200/80 bg-zinc-100">
-      <img src={src} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" />
+      <img src={src} alt="" width={400} height={96} className="h-full w-full object-cover" loading="lazy" decoding="async" />
       <span className="sr-only">{title}</span>
     </div>
   )
@@ -467,8 +467,11 @@ export const TravelChatDemo = forwardRef(function TravelChatDemo(
                     <img
                       src={pkg.coverSrc}
                       alt=""
+                      width={64}
+                      height={64}
                       className="size-16 shrink-0 rounded-lg object-cover"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="min-w-0">
                       <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
@@ -546,8 +549,11 @@ export const TravelChatDemo = forwardRef(function TravelChatDemo(
                       <img
                         src={pkg.coverSrc}
                         alt=""
+                        width={56}
+                        height={56}
                         className="size-14 shrink-0 rounded-lg object-cover"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div className="min-w-0">
                         <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">

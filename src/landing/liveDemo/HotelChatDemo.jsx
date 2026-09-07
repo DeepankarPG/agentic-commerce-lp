@@ -288,7 +288,7 @@ export function HotelChatDemo({
                     className="w-[min(200px,72vw)] shrink-0 overflow-hidden rounded-xl border border-zinc-200/90 bg-white shadow-sm"
                   >
                     <div className="relative h-24 w-full overflow-hidden border-b border-zinc-100 bg-zinc-100">
-                      <img src={h.imageSrc} alt="" className="h-full w-full object-cover" loading="lazy" />
+                      <img src={h.imageSrc} alt="" width={200} height={96} className="h-full w-full object-cover" loading="lazy" decoding="async" />
                     </div>
                     <div className="space-y-1.5 p-2.5 sm:p-3">
                       <p className="text-[12px] font-semibold leading-tight text-zinc-900 sm:text-[13px]">{h.name}</p>
@@ -351,7 +351,7 @@ export function HotelChatDemo({
                 <div className="rounded-2xl border border-zinc-200/90 bg-white p-3 shadow-sm sm:p-4">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
                     <div className="relative h-32 w-full shrink-0 overflow-hidden rounded-xl border border-zinc-100 bg-zinc-100 sm:h-36 sm:w-36">
-                      <img src={hotel.imageSrc} alt="" className="h-full w-full object-cover" loading="lazy" />
+                      <img src={hotel.imageSrc} alt="" width={144} height={144} className="h-full w-full object-cover" loading="lazy" decoding="async" />
                     </div>
                     <div className="min-w-0 flex-1 space-y-3">
                       <div>
@@ -446,8 +446,11 @@ export function HotelChatDemo({
                       <img
                         src={hotel.imageSrc}
                         alt=""
+                        width={56}
+                        height={56}
                         className="size-14 shrink-0 rounded-lg object-cover"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div className="min-w-0 flex-1">
                         <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">Stay</p>
@@ -531,8 +534,11 @@ export function HotelChatDemo({
                         <img
                           src={hotel.imageSrc}
                           alt=""
+                          width={56}
+                          height={56}
                           className="size-14 shrink-0 rounded-lg object-cover"
                           loading="lazy"
+                          decoding="async"
                         />
                         <div className="min-w-0">
                           <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">Checkout</p>

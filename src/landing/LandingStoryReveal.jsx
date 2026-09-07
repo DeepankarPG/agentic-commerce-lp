@@ -104,8 +104,9 @@ function applyWordStyle(el, t, isBrand, isStrike) {
   el.style.color = colorForT(t)
 
   if (isStrike) {
-    const progress = Math.min(1, Math.max(0, (t - 0.5) / 0.5))
-    el.style.setProperty('--strike-w', `${Math.round(progress * 100)}%`)
+    const raw = Math.min(1, Math.max(0, (t - 0.3) / 0.7))
+    const progress = smoothstep01(raw)
+    el.style.setProperty('--strike-w', `${(progress * 100).toFixed(2)}%`)
   }
 }
 
